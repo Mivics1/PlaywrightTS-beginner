@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test"
 
-test.only('Automated Form', async({page})=>{
+test('Automated Form', async({page})=>{
     await page.goto('https://demo.playwright.dev/todomvc/#/');
     await page.waitForTimeout(3000);
     

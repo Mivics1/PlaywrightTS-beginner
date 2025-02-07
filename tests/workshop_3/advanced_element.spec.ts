@@ -1,0 +1,23 @@
+import {test, expect} from '@playwright/test'
+
+test.only('Advancee Element Interactions',async({page})=>{
+    await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_3/index.html');
+    const confirmHover = await page.getByRole('button',{name:'Hover Over Me'}).hover();
+    expect(await page.textContent('#hover-me')).toContain('Text Changed!');
+    await page.waitForTimeout(3000);
+
+    const rightClick = await page.click('button#context-menu',{button:'right'});
+    await page.waitForTimeout(3000);
+
+    const doubleClick = await page.dblclick('button#double-click');
+    await page.waitForTimeout(3000);
+
+    await page.locator('.drag-source').hover();
+    await page.mouse.down();
+    await page.locator('.drop-target').hover();
+    await page.mouse.up();
+    // const dragAndDrop = await page.dragAndDrop('.drag-source','.drop-target');
+    expect(await page.textContent('.drop-target')).toContain('Success');
+    await page.waitForTimeout(3000);
+
+})
