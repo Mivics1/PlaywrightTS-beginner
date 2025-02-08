@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test'
 
-test.only('Advancee Element Interactions',async({page})=>{
+test('Advancee Element Interactions',async({page})=>{
     await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_3/index.html');
     const confirmHover = await page.getByRole('button',{name:'Hover Over Me'}).hover();
     expect(await page.textContent('#hover-me')).toContain('Text Changed!');
@@ -19,5 +19,17 @@ test.only('Advancee Element Interactions',async({page})=>{
     // const dragAndDrop = await page.dragAndDrop('.drag-source','.drop-target');
     expect(await page.textContent('.drop-target')).toContain('Success');
     await page.waitForTimeout(3000);
+})
 
+test.only('Interacting with IFrame',async({page})=>{
+    await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_3/index.html');
+    const Iframe = await page.frame({name:'iframeName'});
+    const textBoxIframe = '#iframe-input'
+    if(Iframe){
+        await Iframe.fill(textBoxIframe, 'God loves you')
+        expect(await Iframe.locator(textBoxIframe).inputValue()).toContain('God loves you');
+    } else{
+        console.log('Do not give up Michael')
+    }
+    await page.waitForTimeout(3000);
 })
