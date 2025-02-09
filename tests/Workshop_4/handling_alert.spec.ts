@@ -28,13 +28,14 @@ test.skip('Confirm Alert',async({page})=>{
 test.only('Open Pop-up',async({page})=>{
     await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_4/index2.html');
     const [popup] = await Promise.all([
-        await page.waitForEvent('popup'),
-        await page.click('#open-popup')
+        page.waitForEvent('popup'),
+        // await page.waitForTimeout(3000),
+        page.click('#open-popup')
     ]);
 
     await popup.waitForLoadState();
     await popup.close();
-    await page.waitForTimeout(3000);
+    // await page.waitForTimeout(3000);
     // await page.getByText('Open Pop-up').click();
     // await page.waitForTimeout(3000);
     // await page.locator('#open-popup.open-popup').click();
