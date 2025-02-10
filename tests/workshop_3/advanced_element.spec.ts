@@ -21,7 +21,7 @@ test('Advancee Element Interactions',async({page})=>{
     await page.waitForTimeout(3000);
 })
 
-test.only('Interacting with IFrame',async({page})=>{
+test('Interacting with IFrame',async({page})=>{
     await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_3/index.html');
     const Iframe = await page.frame({name:'iframeName'});
     const textBoxIframe = '#iframe-input'
