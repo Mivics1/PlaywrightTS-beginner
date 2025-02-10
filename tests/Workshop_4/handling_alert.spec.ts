@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test'
 
-test('Handling Single option Alert',async({page})=>{
-    await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_4/index2.html');
+test('Handling Single option Alert @githubAction',async({page})=>{
+    await page.goto('https://github.com/Mivics1/PlaywrightTS-beginner/tree/main/tests/workshop_4/index2.html');
     let alertMessage = '';
         page.on('dialog',async(dialog)=>{
             expect(await dialog.type()).toBe('alert');
@@ -13,8 +13,8 @@ test('Handling Single option Alert',async({page})=>{
     await page.waitForTimeout(3000);
 })
 
-test('Confirm Alert',async({page})=>{
-    await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_4/index2.html');
+test('Confirm Alert @githubAction',async({page})=>{
+    await page.goto('https://github.com/Mivics1/PlaywrightTS-beginner/tree/main/tests/workshop_4/index2.html');
     let alertMessage = '';
         page.on('dialog',async(dialog)=>{
             alertMessage = await dialog.message();
@@ -25,8 +25,8 @@ test('Confirm Alert',async({page})=>{
     await page.waitForTimeout(3000);
 })
 
-test('Open Pop-up',async({page})=>{
-    await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_4/index2.html');
+test('Open Pop-up @githubAction',async({page})=>{
+    await page.goto('https://github.com/Mivics1/PlaywrightTS-beginner/tree/main/tests/workshop_4/index2.html');
     const [popup] = await Promise.all([
         page.waitForEvent('popup'),
         // await page.waitForTimeout(3000),
