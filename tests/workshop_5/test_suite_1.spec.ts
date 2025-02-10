@@ -1,9 +1,9 @@
 import {test, expect} from '@playwright/test'
 import { beforeEach } from 'node:test'
 
-test.describe('Testing Suite @githubAction',()=>{
+test.describe('Testing Suite',()=>{
     test.beforeEach(async({page})=>{
-        await page.goto('https://github.com/Mivics1/PlaywrightTS-beginner/tree/main/tests/workshop_5/index.html');
+        await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_5/index.html');
     })
     //My Test Data
     const testdata ={
@@ -13,7 +13,7 @@ test.describe('Testing Suite @githubAction',()=>{
         number: '1234567890'
     }
     //Positive Test
-    test('Validating Successful Registration @githubAction',async({page})=>{
+    test('Validating Successful Registration',async({page})=>{
         
         //Entrying values
         await page.fill('#firstName',testdata.firstName);

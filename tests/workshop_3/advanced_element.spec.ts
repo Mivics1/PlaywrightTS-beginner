@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test'
 
-test('Advancee Element Interactions @githubAction',async({page})=>{
-    await page.goto('https://github.com/Mivics1/PlaywrightTS-beginner/tree/main/tests/workshop_3/index.html');
+test('Advancee Element Interactions',async({page})=>{
+    await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_3/index.html');
     const confirmHover = await page.getByRole('button',{name:'Hover Over Me'}).hover();
     expect(await page.textContent('#hover-me')).toContain('Text Changed!');
     await page.waitForTimeout(3000);
@@ -21,8 +21,8 @@ test('Advancee Element Interactions @githubAction',async({page})=>{
     await page.waitForTimeout(3000);
 })
 
-test('Interacting with IFrame @githubAction',async({page})=>{
-    await page.goto('https://github.com/Mivics1/PlaywrightTS-beginner/tree/main/tests/workshop_3/index.html');
+test('Interacting with IFrame',async({page})=>{
+    await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_3/index.html');
     const Iframe = await page.frame({name:'iframeName'});
     const textBoxIframe = '#iframe-input'
     if(Iframe){

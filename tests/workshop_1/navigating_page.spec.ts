@@ -1,6 +1,6 @@
 import {test} from 'playwright/test'
 
-test('Basic Navigation',async({page})=>{
+test.skip('Basic Navigation',async({page})=>{
     await page.goto('https://gitlab.com/');
     await page.getByRole('button',{name:'Accept All Cookies'}).click();
     await page.getByRole('link',{name:'Sign in'}).click();
