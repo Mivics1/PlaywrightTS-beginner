@@ -25,7 +25,7 @@ test.skip('Confirm Alert',async({page})=>{
     await page.waitForTimeout(3000);
 })
 
-test.only('Open Pop-up',async({page})=>{
+test('Open Pop-up',async({page})=>{
     await page.goto('file:///Users/agbooladaramola/Documents/PlayWright/beginner/tests/workshop_4/index2.html');
     const [popup] = await Promise.all([
         page.waitForEvent('popup'),
