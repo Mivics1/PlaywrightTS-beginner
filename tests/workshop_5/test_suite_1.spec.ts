@@ -13,7 +13,7 @@ test.describe('Testing Suite',()=>{
         number: '1234567890'
     }
     //Positive Test
-    test('Validating Successful Registration',async({page})=>{
+    test('Validating Successful Registration @githubAction',async({page})=>{
         
         //Entrying values
         await page.fill('#firstName',testdata.firstName);
@@ -37,7 +37,7 @@ test.describe('Testing Suite',()=>{
     })
     
     //Negative Testing
-    test.only('Validating Unsuccessful Submission',async({page})=>{
+    test('Validating Unsuccessful Submission @githubAction',async({page})=>{
         await page.click('#register');
 
         const error = await page.locator('#error').textContent();
